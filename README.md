@@ -3,8 +3,8 @@
 
 ### Setup
 
-`cp ~/.ssh/github ./github-ssh-key`
+- `cp ~/.ssh/github ./github-ssh-key`
 
-`docker network create language`
+- `docker network create language`
 
-`docker-compose up -d --build`
+- `docker-compose up -d --build`
