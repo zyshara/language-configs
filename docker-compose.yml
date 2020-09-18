@@ -3,6 +3,7 @@ services:
     nginx:
         container_name: nginx
         build:
+            context: .
             dockerfile: nginx.Dockerfile
         ports:
             - "80:80"
@@ -11,15 +12,27 @@ services:
             - /var/run/docker.sock:/tmp/docker.sock:ro
         links:
             - zyara-sh
+            - halcyon
 
     zyara-sh:
         container_name: zyara-sh
         build:
+            args:
+                - GIT_REPO=git@github.com:zyarash/zyara.sh.git
             context: .
             dockerfile: nodejs.Dockerfile
-        ports:
-            - "3000:3000"
-            
+        expose:
+            - "3000"
+
+    halcyon:
+        container_name: halcyon
+        build:
+            args:
+                - GIT_REPO=git@github.com:zyarash/halcyon.git
+            context: .
+            dockerfile: nodejs.Dockerfile
+        expose:
+            - "3000"
 
 networks:
     default:
