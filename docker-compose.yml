@@ -1,0 +1,27 @@
+version: "2"
+services:
+    nginx:
+        container_name: nginx
+        build:
+            dockerfile: nginx.Dockerfile
+        ports:
+            - "80:80"
+            - "443:443"
+        volumes:
+            - /var/run/docker.sock:/tmp/docker.sock:ro
+        links:
+            - zyara-sh
+
+    zyara-sh:
+        container_name: zyara-sh
+        build:
+            context: .
+            dockerfile: nodejs.Dockerfile
+        ports:
+            - "3000:3000"
+            
+
+networks:
+    default:
+        external:
+            name: language
