@@ -33,7 +33,6 @@ services:
             dockerfile: nodejs.Dockerfile
         expose:
             - "3000"
-
 networks:
     default:
         external:
