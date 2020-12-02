@@ -10,12 +10,15 @@ services:
             - "443:443"
         volumes:
             - /var/run/docker.sock:/tmp/docker.sock:ro
+            - /var/www/html:/var/www/html
         links:
-            - zyara-sh
+            - zyara.sh
             - halcyon
+            - sqrwav
+            - zyshara.me
 
-    zyara-sh:
-        container_name: zyara-sh
+    zyara.sh:
+        container_name: zyara.sh
         build:
             args:
                 - GIT_REPO=git@github.com:zyarash/zyara.sh.git
@@ -33,6 +36,7 @@ services:
             dockerfile: nodejs.Dockerfile
         expose:
             - "3000"
+
     sqrwav:
         container_name: sqrwav
         build:
@@ -42,8 +46,27 @@ services:
             dockerfile: nodejs.Dockerfile
         expose:
             - "3000"
-        ports:
-            - "3000:3000"
+
+    zyshara.me:
+        container_name: zyshara.me
+        build:
+            args:
+                - GIT_REPO=git@github.com:zyarash/zyshara.me.git
+            context: .
+            dockerfile: nodejs.Dockerfile
+        expose:
+            - "3000"
+
+    cutiecacti.me:
+        container_name: cutiecacti.me
+        build:
+            args:
+                - GIT_REPO=git@github.com:zyarash/cutiecacti.me.git
+            context: .
+            dockerfile: nodejs.Dockerfile
+        expose:
+            - "3000"
+
 networks:
     default:
         external:
