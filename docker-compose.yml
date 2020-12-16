@@ -16,6 +16,7 @@ services:
             - halcyon
             - sqrwav
             - zyshara.me
+            - colordrop.dev
 
     zyara.sh:
         container_name: zyara.sh
@@ -67,6 +68,15 @@ services:
         expose:
             - "3000"
 
+    colordrop.dev:
+        container_name: colordrop.dev
+        build:
+            args:
+                - GIT_REPO=git@github.com:zyarash/zyara.sh.git
+            context: .
+            dockerfile: nodejs.Dockerfile
+        expose:
+            - "3000"
 networks:
     default:
         external:
