@@ -1,5 +1,14 @@
 # LANGUAGE CONFIGS 【=◈︿◈=】
-## Base configuration files for zyshara's hosted websites
+The repo hosts a series of scripts & docker configs to quiickly get the websites listed below up and running. This setup uses nginx as a reverse proxy to direct traffic to a set of Node apps.
+
+## Supported Sites
+  - https://www.shadowform.dev
+  - https://www.akeosmusic.com
+  - https://www.powerhousemgmt.com
+
+## Dockerfiles
+### nginx.Dockerfile
+🚧 TODO 🚧
 
 ### webpack.Dockerfile
 🚧 TODO 🚧
@@ -9,9 +18,8 @@
 - `docker network create language`
 - `docker-compose up -d --build`
 
-### nginx.Dockerfile
-🚧 TODO 🚧
-
-### .Dockerfile
+### nodejs.Dockerfile
 Deprecated! Do not use!
-🚧 TODO 🚧!
+
+### reactjs.Dockerfile
+Deprecated! Do not use!
