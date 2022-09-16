@@ -1,5 +1,16 @@
+#
+# filename: docker-compose.yaml
+# description: -
+##
+
 version: "2"
 services:
+
+    ###########################
+    # External containers     #
+    ###########################
+
+    # nginx reverse proxy
     nginx:
         container_name: nginx
         build:
@@ -12,10 +23,18 @@ services:
             - /var/run/docker.sock:/tmp/docker.sock:ro
             - /var/www/html:/var/www/html
         links:
-            - publishing.halcyon 
-            - halcyon
+            - shadowform.dev
             - powerhousemgmt
 
+    # certbot for auto ssl renewal
+    certbot:
+        image: certbot/certbot
+
+    ###########################
+    # Website containers      #
+    ###########################
+
+    # https://shadowform.dev
     shadowform.dev:
         container_name: shadowform.dev 
         build:
@@ -26,6 +45,7 @@ services:
         expose:
             - "3000"
 
+    # https://powerhousemgmt.com
     powerhousemgmt:
         container_name: powerhousemgmt
         build:

@@ -33,6 +33,3 @@ $ ssh -T git@github.com
 
 ### nodejs.Dockerfile
 Deprecated! Do not use!
-
-### reactjs.Dockerfile
-Deprecated! Do not use!
