@@ -1,5 +1,5 @@
 # LANGUAGE CONFIGS 【=◈︿◈=】
-The repo hosts a series of scripts & docker configs to quiickly get the websites listed below up and running. This setup uses nginx as a reverse proxy to direct traffic to a set of Node apps.
+This repo hosts a series of scripts & docker configs to quiickly get the websites listed below up and running. This setup uses nginx as a reverse proxy to direct traffic to a set of Node apps.
 
 ## Supported Sites
   - https://shadowform.dev
