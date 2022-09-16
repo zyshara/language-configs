@@ -7,15 +7,16 @@ This repo hosts a series of scripts & docker configs to quickly get the websites
   - https://www.powerhousemgmt.com
 
 ## Setup
-This setup uses nginx as a reverse proxy to direct traffic to a set of Node apps. Each node app has a respective git repo which is pulled via SSH. To get started, clone this directory onto your server and create a new SSH key:
+This setup uses nginx as a reverse proxy to direct traffic to a set of Node apps. Each node app has a respective git repo which is pulled via SSH. To get started, clone this repo onto your server and cd into the directory:
 ```
 $ git clone git@github.com:zyshara/language-configs.git
 $ cd language-configs
 ```
 
-Create a new file called `github-ssh-key` and copy the contents of your newly created private key:
+Use `ssh-keygen` to create a new SSH key called `github-ssh-key` inside of `language-configs`. Each app will copy this key into its container. Make sure you add the new key to github and that you're authenticated:
 ```
-$ touch github-ssh-key
+$ ssh-keygen ...
+$ ssh -T git@github.com
 ```
 
 ## Dockerfiles
