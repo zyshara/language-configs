@@ -13,7 +13,7 @@ $ git clone git@github.com:zyshara/language-configs.git
 $ cd language-configs
 ```
 
-Use `ssh-keygen` to create a new SSH key called `github-ssh-key` inside of `language-configs`. Each app will copy this key into its container. Make sure you add the new key to github and that you're authenticated:
+Use `ssh-keygen` to create a new SSH key named `github-ssh-key` inside of `language-configs`. Each app will copy this key into its container. Make sure you add the new key to github and that you're authenticated:
 ```
 $ ssh-keygen ...
 $ ssh -T git@github.com
