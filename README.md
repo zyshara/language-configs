@@ -2,9 +2,9 @@
 This repo hosts a series of scripts & docker configs to quickly get the websites listed below up and running. This setup uses nginx as a reverse proxy to direct traffic to a set of Node apps.
 
 ## Supported Sites
-  - https:www//shadowform.dev
-  - https:www//akeosmusic.com
-  - https:www//powerhousemgmt.com
+  - https://www.shadowform.dev
+  - https://www.akeosmusic.com
+  - https://www.powerhousemgmt.com
 
 ## Dockerfiles
 ### nginx.Dockerfile
