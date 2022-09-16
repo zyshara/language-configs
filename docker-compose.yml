@@ -12,71 +12,30 @@ services:
             - /var/run/docker.sock:/tmp/docker.sock:ro
             - /var/www/html:/var/www/html
         links:
-            - zyara.sh
+            - publishing.halcyon 
             - halcyon
-            - sqrwav
-            - zyshara.me
-            - colordrop.dev
+            - powerhousemgmt
 
-    zyara.sh:
-        container_name: zyara.sh
+    shadowform.dev:
+        container_name: shadowform.dev 
         build:
             args:
-                - GIT_REPO=git@github.com:zyarash/zyara.sh.git
+             - GIT_REPO=git@github.com:zyarash/shadowform.dev.git
             context: .
             dockerfile: nodejs.Dockerfile
         expose:
             - "3000"
 
-    halcyon:
-        container_name: halcyon
+    powerhousemgmt:
+        container_name: powerhousemgmt
         build:
             args:
-                - GIT_REPO=git@github.com:zyarash/halcyon.git
+             - GIT_REPO=git@github.com:zyshara/powerhousemgmt.git
             context: .
-            dockerfile: nodejs.Dockerfile
+            dockerfile: webpack.Dockerfile
         expose:
             - "3000"
 
-    sqrwav:
-        container_name: sqrwav
-        build:
-            args:
-                - GIT_REPO=git@github.com:zyarash/sqrwav.git
-            context: .
-            dockerfile: nodejs.Dockerfile
-        expose:
-            - "3000"
-
-    zyshara.me:
-        container_name: zyshara.me
-        build:
-            args:
-                - GIT_REPO=git@github.com:zyarash/zyshara.me.git
-            context: .
-            dockerfile: nodejs.Dockerfile
-        expose:
-            - "3000"
-
-    cutiecacti.me:
-        container_name: cutiecacti.me
-        build:
-            args:
-                - GIT_REPO=git@github.com:zyarash/cutiecacti.me.git
-            context: .
-            dockerfile: nodejs.Dockerfile
-        expose:
-            - "3000"
-
-    colordrop.dev:
-        container_name: colordrop.dev
-        build:
-            args:
-                - GIT_REPO=git@github.com:zyarash/zyara.sh.git
-            context: .
-            dockerfile: nodejs.Dockerfile
-        expose:
-            - "3000"
 networks:
     default:
         external:
